@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>aMule</Name>
+  <Repository>ngosang/amule</Repository>
+  <Registry/>
+  <Network>serverrnet</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:4711]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/giste/unraid_media/master/icons/amule.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1698135626</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="ID of the user under that aMule is running. Default is 99 (nobody)." Type="Variable" Display="always" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="ID of the group under that aMule is running. Default is 100 (users)." Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+  <Config Name="Time zone" Target="TZ" Default="" Mode="" Description="Time zone of Unraid server." Type="Variable" Display="always" Required="true" Mask="false">Europe/Madrid</Config>
+  <Config Name="Remote connections password" Target="GUI_PWD" Default="" Mode="" Description="Password for remote connections." Type="Variable" Display="always" Required="false" Mask="true">kmMhbZ5I99p69O7G</Config>
+  <Config Name="Web UI password" Target="WEBUI_PWD" Default="" Mode="" Description="Password for web UI." Type="Variable" Display="always" Required="false" Mask="true">YoIys8qa12mGmPfU</Config>
+  <Config Name="Web UI port" Target="4711" Default="4711" Mode="tcp" Description="TCP port for GUI." Type="Port" Display="always" Required="true" Mask="false">4711</Config>
+  <Config Name="Remote GUI port" Target="4712" Default="4712" Mode="tcp" Description="TCP port for remote connections (web GUI)." Type="Port" Display="always" Required="true" Mask="false">4712</Config>
+  <Config Name="Ed2k tcp port" Target="4662" Default="4662" Mode="tcp" Description="TCP port for ed2k." Type="Port" Display="always" Required="true" Mask="false">4662</Config>
+  <Config Name="Ed2k global search udp port" Target="4665" Default="4665" Mode="udp" Description="UDP port for ed2k search (tcp port +3)." Type="Port" Display="always" Required="true" Mask="false">4665</Config>
+  <Config Name="Ed2k udp" Target="4672" Default="4672" Mode="udp" Description="UDP port for ed2k." Type="Port" Display="always" Required="true" Mask="false">4672</Config>
+  <Config Name="Config" Target="/home/amule/.aMule" Default="/mnt/user/appdata/amule" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/amule</Config>
+  <Config Name="Incoming" Target="/incoming" Default="" Mode="rw" Description="Path for complete downloads." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media_public/downloads/incoming/</Config>
+  <Config Name="Temp" Target="/temp" Default="" Mode="rw" Description="Path for incomplete downloads." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media_public/downloads/temp/</Config>
+  <Config Name="Fix Kad crash" Target="MOD_FIX_KAD_GRAPH_ENABLED" Default="true" Mode="" Description="aMule has an issue when it renders Kad stats graph that crash the application. The crash happens when you enter in the Web UI stats after few days running.&#13;&#10;&#13;&#10;As workaround, we removed the image causing the issue from the Web UI. Since the image is not requested the server doesn't crash." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Fix Kad bootstrap" Target="MOD_FIX_KAD_BOOTSTRAP_ENABLED" Default="true" Mode="" Description="aMule does not download the nodes.dat file required to bootstrap the Kad network. This causes it not to connect to the Kad network.&#13;&#10;&#13;&#10;As workaround, we are downloading the nodes.dat file before starting aMule. The file is only downloaded if it has not been downloaded before." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Enable auto restart?" Target="MOD_AUTO_RESTART_ENABLED" Default="true" Mode="" Description="aMule has some issues that cause it to stop working properly after a few days. Set to true to restart aMule from time to time." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Cron mask" Target="MOD_AUTO_RESTART_CRON" Default="0 6 * * *" Mode="" Description="Cron mask for restart. Default is everyday at 6:00." Type="Variable" Display="advanced" Required="false" Mask="false">0 6 * * *</Config>
+</Container>
